@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{BE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Restaurant", "Restaurant", "{5C814F86-3783-41D7-B411-17906E87CF1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.API", "Services\Restaurant\Restaurant.API\Restaurant.API.csproj", "{9FC545A2-3FD9-4E61-9856-2AF428F720F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.API", "Services\Restaurant\Restaurant.API\Restaurant.API.csproj", "{9FC545A2-3FD9-4E61-9856-2AF428F720F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Domain", "Services\Restaurant\Restaurant.Domain\Restaurant.Domain.csproj", "{21176FD8-1848-4AC3-9EE1-383016D5C486}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Domain", "Services\Restaurant\Restaurant.Domain\Restaurant.Domain.csproj", "{21176FD8-1848-4AC3-9EE1-383016D5C486}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Application", "Services\Restaurant\Restaurant.Application\Restaurant.Application.csproj", "{6A5D92B0-001E-4D34-ADAC-977CD6986D6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Application", "Services\Restaurant\Restaurant.Application\Restaurant.Application.csproj", "{6A5D92B0-001E-4D34-ADAC-977CD6986D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Persistence", "Services\Restaurant\Restaurant.Persistence\Restaurant.Persistence.csproj", "{32476313-7A7C-45CE-B6F0-777CBB6F696E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Infrastructure", "Services\Restaurant\Restaurant.Persistence\Restaurant.Infrastructure.csproj", "{32476313-7A7C-45CE-B6F0-777CBB6F696E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
