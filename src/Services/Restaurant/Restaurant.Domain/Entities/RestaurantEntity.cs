@@ -16,5 +16,6 @@ namespace Restaurant.Domain.Entities
         public string PostalCode { get; set; }
         public string Street { get; set; }
         public string HouseNumber { get; set; }
+        public List<CuisineTypeEntity> CuisinesTypes { get; set; }
     }
 }
