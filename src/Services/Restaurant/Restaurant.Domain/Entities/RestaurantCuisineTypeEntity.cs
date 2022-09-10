@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Domain.Entities
 {
-    public class CuisineTypeEntity : BaseEntity 
+    public class RestaurantCuisineTypeEntity
     {
-        public string Name { get; set; }
-        public List<RestaurantEntity> RestaurantEntities { get; set; }
+        public int RestaurantId { get; set; }
+        public int CuisineTypeId { get; set; }
     }
 }
