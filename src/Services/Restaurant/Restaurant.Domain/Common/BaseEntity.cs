@@ -8,7 +8,8 @@ namespace Restaurant.Domain.Common
 {
     public class BaseEntity
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
+        public Guid ExternalId { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime LastDateModified { get; set; }
     }
