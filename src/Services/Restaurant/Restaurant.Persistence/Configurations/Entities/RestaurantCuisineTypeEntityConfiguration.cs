@@ -13,11 +13,15 @@ namespace Restaurant.Persistence.Configurations.Entities
     {
         public void Configure(EntityTypeBuilder<RestaurantCuisineTypeEntity> builder)
         {
+            builder.HasKey(x => new { x.RestaurantId, x.CuisineTypeId });
+
+            #region SeedData
             builder.HasData(new RestaurantCuisineTypeEntity
             {
                 RestaurantId = 1,
                 CuisineTypeId = 2
             });
+            #endregion
         }
     }
 }

@@ -10,6 +10,6 @@ namespace Restaurant.Domain.Entities
     public class CuisineTypeEntity : BaseEntity 
     {
         public string Name { get; set; }
-        public List<RestaurantEntity> RestaurantEntities { get; set; }
+        public IList<RestaurantCuisineTypeEntity> RestaurantCuisineTypes { get; set; }
     }
 }
