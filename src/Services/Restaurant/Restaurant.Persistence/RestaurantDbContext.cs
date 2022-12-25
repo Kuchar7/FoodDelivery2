@@ -17,7 +17,8 @@ namespace Restaurant.Persistence
         }
 
         public DbSet<RestaurantEntity> Restaurants { get; set; }
-        public DbSet<CuisineTypeEntity> RestaurantCuisineTypes { get; set; }
+        public DbSet<CuisineTypeEntity> CuisineTypes { get; set; }
+        public DbSet<RestaurantCuisineTypeEntity> RestaurantCuisineTypes { get; set; }
         public DbSet<DishEntity> Dishes { get; set; }
         public DbSet<DishTypeEntity> DishTypes { get; set; }
 
