@@ -9,7 +9,7 @@ namespace Restaurant.Application.Contracts
 {
     public interface IRestaurantRepository
     {
-        Task<RestaurantEntity> GetRestaurant(string restaurantId);
+        Task<RestaurantEntity> GetRestaurant(int restaurantId);
         Task CreateRestaurant(RestaurantEntity restaurantEntity);
         Task UpdateRestaurant(RestaurantEntity restaurantEntity);
     }

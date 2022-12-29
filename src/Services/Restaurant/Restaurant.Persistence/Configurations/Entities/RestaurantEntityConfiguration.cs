@@ -10,9 +10,6 @@ namespace Restaurant.Persistence.Configurations.Entities
         {
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.ExternalId)
-                .IsRequired();
-
             builder.Property(x => x.Name)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -41,7 +38,6 @@ namespace Restaurant.Persistence.Configurations.Entities
             builder.HasData(new RestaurantEntity
             {
                 Id = 1,
-                ExternalId = new Guid("60eac82b-3eee-4f11-b755-0a1678c80db8"),
                 Name = "Super Pizzeria",
                 Description = "Description",
                 Province = "mazowieckie",

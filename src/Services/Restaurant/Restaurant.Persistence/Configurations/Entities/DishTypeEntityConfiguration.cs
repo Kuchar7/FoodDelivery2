@@ -15,9 +15,6 @@ namespace Restaurant.Persistence.Configurations.Entities
         {
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.ExternalId)
-                .IsRequired();
-
             builder.HasIndex(x => x.Name).IsUnique();
 
             builder.Property(x => x.Name)
@@ -29,7 +26,6 @@ namespace Restaurant.Persistence.Configurations.Entities
                 new DishTypeEntity
                 {
                     Id = 1,
-                    ExternalId = new Guid("b8d310a2-44c5-4aa6-baf6-fe9934f17e35"),
                     Name = "Kebab",
                     DateCreated = DateTime.MinValue,
                     LastDateModified = DateTime.MinValue,
@@ -37,7 +33,6 @@ namespace Restaurant.Persistence.Configurations.Entities
                 new DishTypeEntity
                 {
                     Id = 2,
-                    ExternalId = new Guid("5559f3b0-b1b3-445e-8e96-e36b8e2e22a0"),
                     Name = "Pizza",
                     DateCreated = DateTime.MinValue,
                     LastDateModified = DateTime.MinValue,

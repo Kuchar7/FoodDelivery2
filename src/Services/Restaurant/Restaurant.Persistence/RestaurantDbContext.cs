@@ -34,7 +34,6 @@ namespace Restaurant.Persistence
                 entry.Entity.LastDateModified = DateTime.Now;
                 if(entry.State == EntityState.Added)
                 {
-                    entry.Entity.ExternalId = Guid.NewGuid();
                     entry.Entity.DateCreated = DateTime.Now;
                 }   
             }

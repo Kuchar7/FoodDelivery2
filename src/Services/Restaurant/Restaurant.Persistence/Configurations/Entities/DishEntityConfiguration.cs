@@ -16,9 +16,6 @@ namespace Restaurant.Persistence.Configurations.Entities
         {
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.ExternalId)
-                .IsRequired();
-
             builder.Property(x => x.Name)
                 .IsRequired()
                 .HasMaxLength(60);
@@ -38,7 +35,6 @@ namespace Restaurant.Persistence.Configurations.Entities
             builder.HasData(new DishEntity
             {
                 Id = 1,
-                ExternalId = new Guid("86eca508-742b-4139-af72-ea21a2f9050d"),
                 Name = "Big Pepperoni",
                 Description = "Description",
                 DishTypeId = 2,
