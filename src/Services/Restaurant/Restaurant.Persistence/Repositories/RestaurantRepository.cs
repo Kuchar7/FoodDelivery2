@@ -18,9 +18,19 @@ namespace Restaurant.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public Task CreateRestaurant(RestaurantEntity restaurantEntity)
+        public async Task<RestaurantEntity> CreateRestaurant(RestaurantEntity restaurantEntity)
         {
-            throw new NotImplementedException();
+            await _dbContext.AddAsync(restaurantEntity);
+            await _dbContext.SaveChangesAsync();
+            return restaurantEntity;
+        }
+
+        public async Task<IEnumerable<RestaurantEntity>> GetAllRestaurants()
+        {
+            return await _dbContext.Restaurants
+                .Include(x => x.Dishes)
+                .Include(x => x.RestaurantCuisineTypes)
+                .ToListAsync();
         }
 
         public async Task<RestaurantEntity> GetRestaurant(int restaurantId)
@@ -31,9 +41,10 @@ namespace Restaurant.Persistence.Repositories
                 .FirstOrDefaultAsync(x => x.Id == restaurantId);
         }
 
-        public Task UpdateRestaurant(RestaurantEntity restaurantEntity)
+        public async Task UpdateRestaurant(RestaurantEntity restaurantEntity)
         {
-            throw new NotImplementedException();
+            _dbContext.Entry(restaurantEntity).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
