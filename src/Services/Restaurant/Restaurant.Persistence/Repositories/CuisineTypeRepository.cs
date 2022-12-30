@@ -1,4 +1,5 @@
 ﻿using Restaurant.Application.Contracts;
+using Restaurant.Domain.Entities;
 
 namespace Restaurant.Persistence.Repositories
 {
@@ -11,6 +12,19 @@ namespace Restaurant.Persistence.Repositories
             _dbContext = dbContext;
         }
 
+        public Task AddCuisineTypesToRestaurant(string restaurantId, int[] cuisineTypeIds)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task<IEnumerable<CuisineTypeEntity>> GetCuisineTypesByRestaurantId(string restaurantId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task RemoveCuisineTypesFromRestaurant(string restaurantId, int[] cuisineTypeIds)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

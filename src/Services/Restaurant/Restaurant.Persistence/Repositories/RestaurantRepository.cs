@@ -29,7 +29,9 @@ namespace Restaurant.Persistence.Repositories
         {
             return await _dbContext.Restaurants
                 .Include(x => x.Dishes)
+                .ThenInclude(x => x.DishType)
                 .Include(x => x.RestaurantCuisineTypes)
+                .ThenInclude(x => x.CuisineType)
                 .ToListAsync();
         }
 
@@ -37,7 +39,9 @@ namespace Restaurant.Persistence.Repositories
         {
             return await _dbContext.Restaurants
                 .Include(x => x.Dishes)
+                .ThenInclude(x => x.DishType)
                 .Include(x => x.RestaurantCuisineTypes)
+                .ThenInclude(x => x.CuisineType)
                 .FirstOrDefaultAsync(x => x.Id == restaurantId);
         }
 

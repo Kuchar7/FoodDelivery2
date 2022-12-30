@@ -15,6 +15,14 @@ namespace Restaurant.Persistence.Configurations.Entities
         {
             builder.HasKey(x => new { x.RestaurantId, x.CuisineTypeId });
 
+            builder.HasOne(x => x.Restaurant)
+                .WithMany(x => x.RestaurantCuisineTypes)
+                .HasForeignKey(x => x.RestaurantId);
+
+            builder.HasOne(x => x.CuisineType)
+                .WithMany(x => x.RestaurantCuisineTypes)
+                .HasForeignKey(x => x.CuisineTypeId);
+
             #region SeedData
             builder.HasData(new RestaurantCuisineTypeEntity
             {
