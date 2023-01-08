@@ -1,3 +1,4 @@
+using Restaurant.API.Middleware;
 using Restaurant.Application.Extensions;
 using Restaurant.Persistence.Extensions;
 
@@ -21,6 +22,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthorization();
 
