@@ -1,10 +1,10 @@
-﻿using Restaurant.Application.DTOs.Common;
-using Restaurant.Application.DTOs.DishType;
+﻿using Restaurant.Application.DTOs.DishType;
 
 namespace Restaurant.Application.DTOs.Dish
 {
-    public class DishDto : BaseDto
+    public class DishDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public DishTypeDto DishType { get; set; }
