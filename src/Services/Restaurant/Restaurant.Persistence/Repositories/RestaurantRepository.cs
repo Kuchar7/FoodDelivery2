@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Restaurant.Application.Contracts;
 using Restaurant.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Restaurant.Persistence.Repositories
 {
@@ -32,6 +27,7 @@ namespace Restaurant.Persistence.Repositories
                 .ThenInclude(x => x.DishType)
                 .Include(x => x.RestaurantCuisineTypes)
                 .ThenInclude(x => x.CuisineType)
+                .AsNoTracking()
                 .ToListAsync();
         }
 
