@@ -1,5 +1,5 @@
-﻿using Restaurant.Application.Contracts;
-using Restaurant.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Restaurant.Application.Contracts;
 
 namespace Restaurant.Persistence.Repositories
 {
@@ -12,19 +12,9 @@ namespace Restaurant.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public Task AddCuisineTypesToRestaurant(string restaurantId, int[] cuisineTypeIds)
+        public async Task<bool> Exist(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<CuisineTypeEntity>> GetCuisineTypesByRestaurantId(string restaurantId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task RemoveCuisineTypesFromRestaurant(string restaurantId, int[] cuisineTypeIds)
-        {
-            throw new NotImplementedException();
+            return await _dbContext.CuisineTypes.AnyAsync(x => x.Id == id);
         }
     }
 }

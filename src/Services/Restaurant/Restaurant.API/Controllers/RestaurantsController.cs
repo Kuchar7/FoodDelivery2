@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Restaurant.Application.DTOs.Restaurant;
+using Restaurant.Application.Features.Restaurants.Requests.Commands;
 using Restaurant.Application.Features.Restaurants.Requests.Queries;
 
 namespace Restaurant.API.Controllers
@@ -30,6 +31,14 @@ namespace Restaurant.API.Controllers
         {
             var restaurant = await _mediator.Send(new GetRestaurantRequest(restaurantId));
             return Ok(restaurant);
+        }
+
+        // POST: api/restaurants
+        [HttpPost]
+        public async Task<ActionResult<RestaurantDto>> Post([FromBody] CreateRestaurantDto restaurantDto)
+        {
+            var newRestaurantId = await _mediator.Send(new CreateRestaurantCommand(restaurantDto));
+            return Created($"api/restaurants/{newRestaurantId}", null);
         }
     }
 }

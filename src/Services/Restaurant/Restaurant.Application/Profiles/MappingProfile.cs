@@ -15,6 +15,8 @@ namespace Restaurant.Application.MappingProfile
             CreateMap<RestaurantEntity, RestaurantDto>()
                 .ForMember(x => x.CuisinesTypes, opt => opt.MapFrom(x => x.RestaurantCuisineTypes.Select(y => y.CuisineType).ToList()))
                 .ReverseMap();
+
+            CreateMap<CreateRestaurantDto, RestaurantEntity>();
             #endregion
 
             #region CuisineType

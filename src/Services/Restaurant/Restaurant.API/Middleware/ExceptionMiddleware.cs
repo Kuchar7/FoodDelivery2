@@ -1,5 +1,4 @@
 ﻿using Restaurant.Application.Exceptions;
-using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
 
@@ -38,6 +37,10 @@ namespace Restaurant.API.Middleware
                     break;
                 case NotFoundException notFoundException:
                     statusCode = HttpStatusCode.NotFound;
+                    break;
+                case ValidationException validationException:
+                    statusCode = HttpStatusCode.UnprocessableEntity;
+                    result = JsonSerializer.Serialize(validationException.Errors);
                     break;
                 default:
                     break;
