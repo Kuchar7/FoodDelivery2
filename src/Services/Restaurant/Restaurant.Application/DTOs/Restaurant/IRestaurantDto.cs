@@ -1,6 +1,6 @@
 ﻿namespace Restaurant.Application.DTOs.Restaurant
 {
-    public class CreateRestaurantDto : IRestaurantDto
+    public interface IRestaurantDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

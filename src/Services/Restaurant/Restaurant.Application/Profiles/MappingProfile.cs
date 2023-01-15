@@ -17,6 +17,7 @@ namespace Restaurant.Application.MappingProfile
                 .ReverseMap();
 
             CreateMap<CreateRestaurantDto, RestaurantEntity>();
+            CreateMap<UpdateRestaurantDto, RestaurantEntity>();
             #endregion
 
             #region CuisineType
